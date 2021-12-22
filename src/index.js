@@ -48,6 +48,39 @@ const contact = (function(){
 
 })();
 
+const nav = (function(){
+  const nav = document.createElement('nav');
+  const ul = document.createElement('ul');
+  const goHome = document.createElement('li');
+  goHome.onclick = makeListener(home);
+  goHome.textContent = 'Home';
+  const goMenu = document.createElement('li');
+  goMenu.onclick = makeListener(menu);
+  goMenu.textContent = 'Menu';
+  const goContact = document.createElement('li');
+  goContact.onclick = makeListener(contact);
+  goContact.textContent = 'Contact'
+  ul.append(goHome, goMenu, goContact);
+  nav.append(ul);
+  return nav;
+})();
+
+const body = document.querySelector('body');
+body.prepend(nav);
 const container = document.querySelector("#content");
-console.log(container);
-container.append(home, menu, contact)
+
+function emptyContainer(){
+  const container = document.querySelector("#content");
+  while (container.firstChild){
+    container.removeChild(container.firstChild);
+  }
+}
+
+function makeListener(div){
+  return () => {
+    emptyContainer();
+    container.append(div);
+  }
+}
+
+container.append(home);
