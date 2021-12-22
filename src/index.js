@@ -1,14 +1,4 @@
-/*<div id="menu">
-<h1>Menu</h1>
-<div>We have mashed potatoes!</div>
-<p>That's it.</p>
-<p>I only sell mashed potatoes.</p>
-</div>
-<div id="contact">
-<h1>Contact</h1>
-<p>Potatoes not fresh? Come fill up our feedback form at this link!</p>
-<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Get help here</a>
-</div> */
+import './style.css'
 
 const home = (function(){
   const div = document.createElement('div');
